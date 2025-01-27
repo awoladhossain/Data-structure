@@ -1,5 +1,5 @@
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
 // * basic structure
 
@@ -120,14 +120,87 @@ using namespace std;
 //     }
 // }
 
-int main()
-{
-    for (int i = 0; i < 5; i++)
-    {
-        for (int j = 0; j <= i; j++)
-        {
-            cout << j << " ";
+// int main()
+// {
+//     for (int i = 0; i < 5; i++)
+//     {
+//         for (int j = 0; j <= i; j++)
+//         {
+//             cout << j << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+// * Write a code to reverse a number
+
+#include <iostream>
+using namespace std;
+
+// int main(){
+//     int n;
+//     cin>>n;
+//     int reverse = 0;
+//     while(n>0){
+//         int lastdigit = n%10;
+//         reverse = reverse*10 + lastdigit;
+//         n = n/10;
+//     }
+//     cout<<reverse;
+//     return 0;
+// }
+
+// *How do you reverse a string?
+
+// int main(){
+//     string str;
+//     cin>>str;
+//     int n = str.length();
+//     for(int i=n-1; i>=0; i--){
+//         cout<<str[i];
+//     }
+// }
+
+// * Write a code to check whether a number is palindrome or not
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     int reverse = 0;
+//     int temp = n;
+//     while (temp > 0)
+//     {
+//         int lastdigit = temp % 10;
+//         reverse = reverse * 10 + lastdigit;
+//         temp = temp / 10;
+//     }
+//     if (reverse == n)
+//     {
+//         cout << "Palindrome";
+//     }
+//     else
+//     {
+//         cout << "Not a Palindrome";
+//     }
+//     return 0;
+// }
+
+// * Write a code to check whether a number is prime or not
+
+int main(){
+    int n;
+    cin>>n;
+    int i;
+    for(i=2; i<n; i++){
+        if(n%i==0){
+            cout<<"Not Prime";
+            break;
         }
-        cout << endl;
     }
+    if(i==n){
+        cout<<"Prime";
+    }
+    return 0;
+
 }
