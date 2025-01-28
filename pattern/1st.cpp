@@ -188,19 +188,142 @@ using namespace std;
 
 // * Write a code to check whether a number is prime or not
 
-int main(){
-    int n;
-    cin>>n;
-    int i;
-    for(i=2; i<n; i++){
-        if(n%i==0){
-            cout<<"Not Prime";
-            break;
-        }
-    }
-    if(i==n){
-        cout<<"Prime";
-    }
-    return 0;
+// int main(){
+//     int n;
+//     cin>>n;
+//     int i;
+//     for(i=2; i<n; i++){
+//         if(n%i==0){
+//             cout<<"Not Prime";
+//             break;
+//         }
+//     }
+//     if(i==n){
+//         cout<<"Prime";
+//     }
+//     return 0;
 
-}
+// }
+
+// int main()
+// {
+//     int n = 4;
+//     for (int i = 0; i < n; i++)
+//     {
+//         for (int j = 1; j <= i + 1; j++)
+//         {
+//             cout << j << " ";
+//         }
+//         cout<<endl;
+//     }
+// }
+
+// int main()
+// {
+//     int n = 4;
+//     for (int i = n; i >=0; i--)
+//     {
+//         for (int j = i+1; j >0; j--)
+//         {
+//             cout << j << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+// int main()
+// {
+//     int n = 4;
+//     for (int i = 0; i <n; i++)
+//     {
+//         for (int j = i+1; j >0; j--)
+//         {
+//             cout << j << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+// * Floyd's triangle pattern
+// int main()
+// {
+//     int n = 4;
+//     int count = 0;
+//     for (int i = 0; i <n; i++)
+//     {
+//         for (int j = i+1; j >0; j--)
+//         {
+//            cout<<count<<" ";
+//            count++;
+//         }
+//         cout << endl;
+//     }
+// }
+// output:
+// 0
+// 1 2
+// 3 4 5
+// 6 7 8 9
+
+// int main()
+// {
+//     int n = 4;
+//     char ch='Acls';
+//     for (int i = 0; i <n; i++)
+//     {
+//         for (int j = i+1; j >0; j--)
+//         {
+//            cout<<ch<<" ";
+//            ch++;
+//         }
+//         cout << endl;
+//     }
+// }
+
+// output::
+// A
+// B C
+// D E F
+// G H I J
+
+// int main()
+// {
+//     int n = 4;
+//     char ch='A';
+//     for (int i = 1; i <=n; i++)
+//     {
+//         for (int j = i; j > 0; j--)
+//         {
+//            cout << (char)(ch + j - 1) << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+// A
+// B A
+// C B A
+// D C B A
+
+// int main()
+// {
+//     int n = 4;
+//     int num = 1;
+//     for (int i = 0; i < n; i++)
+//     {
+//         // spcaes
+//         for (int j = 0; j < i; j++)
+//         {
+//             cout << " ";
+//         }
+//         // numbers
+//         for (int j = 0; j < n - i; j++)
+//         {
+//            cout<<(i+1);
+//         }
+//         cout<<endl;
+//     }
+// }
+// 1111
+//  222
+//   33
+//    4
