@@ -400,5 +400,132 @@
 
 // export default Button;
 
-
 //  * What is Error Boundary, How can we write a separate Error Boundary Component? (11)
+/**
+ * An Error Boundary is a React component that catches JavaScript errors in its child component tree and prevents the entire app from crashing. Instead, it gracefully displays an error UI.
+ * ✅ Only class components can be Error Boundaries (functional components need useErrorBoundary from third-party libraries).
+✅ Catches errors in render, lifecycle methods, and constructors of child components.
+✅ Does NOT catch errors in:
+
+* Event handlers
+Asynchronous code (e.g., setTimeout, fetch)
+Server-side rendering (SSR)
+Errors inside the Error Boundary itself
+
+ow to Write a Separate Error Boundary Component?
+React provides two lifecycle methods for error handling:
+
+static getDerivedStateFromError(error) → Updates state to display fallback UI.
+componentDidCatch(error, info) → Logs the error details.
+ */
+
+//  * Step 1: Create an ErrorBoundary Component
+// import React from "react";
+// class ErrorBoundary extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = { hasError: false };
+//     }
+// }
+// static getDerivedStateFromError(error){
+//     return { hasError: true };
+// }
+// componentDisCatch(error, info){
+//     console.error("Error caught in ErrorBoundary:", error, info);
+// }
+// render(){
+//     if (this.state.hasError) {
+//         return <h1>Something went wrong.</h1>;
+//     }
+//     return this.props.children;
+// }
+// export default ErrorBoundary;
+
+// // * Step 2: Create a Component That Throws an Error (BuggyComponent.js)
+// import React, { useState } from "react";
+// const BuggyComponent = () => {
+//     const [crash, setCrash] = useState(fasle);
+//      if (crash) {
+//     throw new Error("Something went wrong!");
+//     }
+//      return (
+//     <div>
+//       <h3>This is a normal component.</h3>
+//       <button onClick={() => setCrash(true)}>Crash the Component</button>
+//     </div>
+//   );
+// };
+// }
+// export default BuggyComponent;
+
+// // * Step 3: Use ErrorBoundary in App.js
+// import React, { useState } from "react";
+// import ErrorBoundary from "./ErrorBoundary";
+// import BuggyComponent from "./BuggyComponent";
+
+// const App = () => {
+//   return (
+//     <div>
+//       <h2>React Error Boundary Example</h2>
+
+//       {/* Wrap only components that might throw errors */}
+//       <ErrorBoundary>
+//         <BuggyComponent />
+//       </ErrorBoundary>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+//  *  Write down a basic sum function using Typescript and how do you accept params in either string or number?
+
+// function sum(a:number| string, b:number| string):number | string {
+//     if(typeof a =="number" && typeof b == "number"){
+//         return a + b;
+//     } else {
+//         return a.toString() + b.toString();
+//     }
+// }
+// console.log(sum(10, 20)); // Output: 30 (Number Addition)
+// console.log(sum("Hello, ", "World!")); // Output: "Hello, World!" (String Concatenation)
+// console.log(sum(10, "20"));
+
+//  *  What are Generics functions (inside Typescript), can you write down types ?
+/**
+ * Generics allow us to create reusable, type-safe functions, classes, or interfaces without specifying an exact type beforehand.
+
+👉 Instead of hardcoding types, Generics use a placeholder (like <T>) that gets replaced with the actual type when the function is called.
+ */
+
+// function identity<T>(value: T): T{
+//     return value;
+// }
+// console.log(identity<number>(10));      // Output: 10
+// console.log(identity<string>("Hello")); // Output: "Hello"
+// console.log(identity<boolean>(true));   // Output: true
+
+//  *  Multiple Generic Types
+// function pair<T, U>(first: T, second: U): [T, U] {
+//   return [first, second];
+// }
+
+// console.log(pair<number, string>(1, "TypeScript")); // Output: [1, "TypeScript"]
+// console.log(pair<boolean, string>(true, "Generics")); // Output: [true, "Generics"]
+
+
+// *   Generic Function with Constraints (extends)
+// function getLength< extends { length: number }> (value:T):number{
+//     return value.length;
+// }
+// console.log(getLength("Hello")); // ✅ Works (string has length)
+// console.log(getLength([1, 2, 3])); // ✅ Works (array has length)
+
+// function firstElement<T>(arr: T[]): T | undefined {
+//   return arr.length > 0 ? arr[0] : undefined;
+// }
+
+// console.log(firstElement([10, 20, 30])); // Output: 10
+// console.log(firstElement(["A", "B", "C"])); // Output: "A"
+// console.log(firstElement([])); // Output: undefined
+
